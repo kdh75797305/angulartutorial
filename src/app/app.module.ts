@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HerosComponent } from './heros/heros.component';
-import { HeroDetailComponent } from './heros/hero-detail/hero-detail.component';
+import { HeroDetailComponent} from './heros/hero-detail/hero-detail.component';
 import {HeroService} from './heros/hero.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './messages/message.service';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './heros/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -15,11 +17,13 @@ import { MessageService } from './messages/message.service';
     AppComponent,
     HerosComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [HeroService, MessageService],
   bootstrap: [AppComponent]

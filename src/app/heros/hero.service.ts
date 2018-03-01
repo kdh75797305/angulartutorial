@@ -16,6 +16,12 @@ export class HeroService {
     return of(HEROES);
   }
 
+
+  getHeroById(id): Observable<Hero> {
+    this.messageService.add('test Message');
+    return of(HEROES.find(hero => hero.id === id));
+  }
+
   /*
   getHero() {
     setTimeout(() => {} , 50000000);

@@ -1,26 +1,17 @@
 heros works!<br>
 
 <div>
-
-  <div *ngIf="selected_Hero">
-    id: {{selected_Hero.id}}<br>
-
-    name : {{ selected_Hero.name}}
-    <input [(ngModel)]="selected_Hero.name" placeholder="name">
-    <div>
-      {{selected_Hero.name}}
-    </div>
-  </div>
-
-
   <ul class="heroes">
+    <li *ngFor='let hero of heroes'>
+      <!--[class.selected]="hero === selected_Hero" (click)="onSelect(hero)">-->
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
 
-    <li *ngFor='let hero of heroes' [class.selected]="hero === selected_Hero" (click)="onSelect(hero)">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
     </li>
   </ul>
 
 
 </div>
 
-<app-hero-detail [hero]="selected_Hero"></app-hero-detail>
+<!--<app-hero-detail [hero]="selected_Hero"></app-hero-detail>-->
